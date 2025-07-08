@@ -1,0 +1,3 @@
+ps = response.xpath('//*[@id="mw-content-text"]/div/table/following-sibling::p[not(preceding-sibling::div[@class="mw-heading mw-heading2"])]').extract()
+
+'//table[contains(@class, "infobox")]//img/@src
