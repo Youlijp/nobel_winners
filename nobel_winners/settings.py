@@ -16,7 +16,7 @@ ADDONS = {}
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "nobel_winners (+http://www.yourdomain.com)"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -65,8 +65,8 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    "nobel_winners.pipelines.DropNonPersons": 300,
-    "nobel_winners.pipelines.NobelImagesPipeline": 300
+    "nobel_winners.pipelines.NobelImagesPipeline": 300,
+    "nobel_winners.pipelines.DropNonPersons": 300
 }
 
 IMAGES_STORE = 'images'

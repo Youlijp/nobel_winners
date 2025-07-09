@@ -33,6 +33,11 @@ class NobelImagesPipeline(ImagesPipeline):
             yield scrapy.Request(image_url)
 
     def item_completed(self, results, item, info):
+        for ok, result in results:
+            if not ok:
+                print(f"Falha ao baixar: {result.get('url') if isinstance(result, dict) else result}")
+            else:
+                print(f"Imagem baixada: {result['path']}")
         image_paths = [img['path'] for ok, img in results if ok]
         if not image_paths:
             raise DropItem("Item contains no images")
@@ -40,3 +45,5 @@ class NobelImagesPipeline(ImagesPipeline):
         adapter['bio_image'] = image_paths[0]
 
         return item
+    
+    

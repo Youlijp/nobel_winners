@@ -47,7 +47,7 @@ class NWinnerSpiderBio(scrapy.Spider):
         item['image_urls'] = []
         img_src = response.xpath('//table[contains(@class, "infobox")]//img/@src')
         if img_src:
-            item['image_urls'] = ['http:' + img_src[0].extract()]
+            item['image_urls'] = ['https:' + img_src[0].extract()]
         
         ps = response.xpath('//table[contains(@class, "infobox")]/following-sibling::*[not(self::h2)][preceding-sibling::table[contains(@class, "infobox")]][self::p]').extract()
 
