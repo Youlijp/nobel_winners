@@ -20,6 +20,11 @@ class NWinnerSpiderBio(scrapy.Spider):
         "http://en.wikipedia.org/wiki/List_of_Nobel_laureates_by_country"
     ]
 
+    custom_settings = {
+        'ITEM_PIPELINES': 
+            {"nobel_winners.pipelines.NobelImagesPipeline": 1}
+    }
+
     def parse(self, response):
 
         filename = response.url.split('/')[-1]
